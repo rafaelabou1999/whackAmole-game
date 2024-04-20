@@ -1,0 +1,61 @@
+body{
+    background-image: url(/images/grass.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.score{
+    width: 13em;
+    height:2em;
+    background-color: rgb(26, 24, 24);
+    padding-left: .4rem;
+    font-size: .9rem;
+    font-family: monospace;
+    margin: 5% auto;
+    color:rgb(157, 175, 56);
+    
+}
+.grid-hole{
+    display: grid;
+    grid-template-columns: repeat(3,15em);
+    grid-template-rows: repeat(3,10em);
+    grid-gap:2%;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+.hole{
+    width: 12.5em;
+    height: 9.5em;
+    background-color: rgb(26, 24, 24);
+    border-radius: 60%;
+}
+
+.character{
+    display: none;
+}
+.character img{
+    object-fit: cover;
+    width:80%;
+    display: block;
+    margin: 0 auto;
+}
+
+h2, button{
+    font-family: monospace;
+    text-align: center;
+
+}
+
+.score{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.points{
+    font-size: 1.6rem;
+    padding:.9rem;
+    color:whitesmoke;
+}

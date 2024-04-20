@@ -3,14 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Wack-mole Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jersey+25&display=swap" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet"/>
+    
 </head>
 <body>
+    <div class="bright"></div>
+  
     <div class="start">
-        <img src="images/character.png"/>
-        <h2>Welcome to Wack-mole Game</h2>
-        <button><a href='game.html'>Start</a></button>
+        <h3>Welcome to Whack-A-Mole Game!</h3>
+        <button>Start</button>
     </div>
+    <div class="info">
+        <div class="score">
+            <h2>Tries:</h2>
+            <p class="points">0</p>
+        </div>
+        <div class="hearts">
+            <h4 class="heartScore">3x</h4>
+            <img src="images/heartFull.png"/>
+            <img src="images/heartFull.png"/>
+            <img src="images/heartFull.png"/>
+        </div>
+    </div>
+    <div class="lost">
+        <h3>You lost!</h3>
+        <button>Try again</button>
+    </div>
+    <div class="grid-hole">
+        <div class="hole">
+            <div class="character">
+                <img src="images/character.png"/>
+                <p class="earn200">+ 200</p>
+            </div>
+        </div>
+        <div class="hole">
+            <div class="character">
+                <img src="images/character.png"/>
+                <p class="earn200">+ 200</p>
+            </div>
+        </div>
+        <div class="hole">
+            <div class="character">
+                <img src="images/character.png"/>
+                <p class="earn200">+ 200</p>
+            </div>
+        </div>
+        <div class="hole">
+            <div class="character">
+                <img src="images/character.png"/>
+                <p class="earn100">+100</p>
+            </div>
+        </div>
+        <div class="hole">
+            <div class="character">
+                <img src="images/character.png"/>
+                <p class="earn200">+ 200</p>
+            </div>
+        </div>
+        <div class="hole">
+            <div class="character">
+                <img src="images/character.png"/>
+                <p class="earn200">+ 200</p>
+            </div>
+        </div>
+        <div class="hole">
+            <div class="character">
+                <img src="images/character.png"/>
+                <p class="earn100">+ 100</p>
+            </div>
+        </div>
+        <div class="hole">
+            <div class="character">
+                <img src="images/character.png"/>
+                <p class="earn100">+ 100</p>
+            </div>
+        </div>
+        <div class="hole">
+            <div class="character">
+                <img src="images/character.png"/>
+                <p class="earn100">+ 100</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
 </body>
 </html>

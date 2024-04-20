@@ -91,8 +91,8 @@ body{
 }
 .grid-hole{
     display: grid;
-    grid-template-columns: repeat(3,15em);
-    grid-template-rows: repeat(3,10em);
+    grid-template-columns: repeat(2,15em);
+    grid-template-rows: repeat(3,11em);
     grid-gap:2%;
     position: absolute;
     top:50%;
@@ -100,7 +100,7 @@ body{
     transform: translate(-50%,-50%);
 }
 .hole{
-    width: 12.5em;
+    width: 11.5em;
     height: 9.5em;
     background-color: rgb(26, 24, 24);
     border-radius: 60%;
@@ -186,15 +186,7 @@ h2, button{
     body{
         background-repeat: repeat;
     }
-    .grid-hole{
-        position: absolute;
-        top:50%;
-        left:50%;
-        transform: translate(-45%,-45%);
-        grid-template-columns: repeat(3,12em);
-        grid-template-rows: repeat(3,10em);
-    }
-
+    
     .hole{
         width: 10em;
         height:10em;

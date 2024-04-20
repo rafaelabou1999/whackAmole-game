@@ -61,7 +61,7 @@ function setScore(random, img){
     
 }
 
-let heartPoint = 3;
+let heartPoint = 5;
 function removeLife(){
     heartArray.forEach((heart) => {
       console.log("heart aq")
@@ -77,14 +77,15 @@ holesArray.forEach((hole) => {
         clickMole();
         if(hole){
            if(holesArray.indexOf(hole) === random){
-            if(hole.getAttribute('class') === 'earn100'){
-                console.log("earn 100");
-                score += 100;
-            } else if(hole.getAttribute('class') === 'earn200'){
-                score += 200;
-            }
+                if(hole.classList.contains("earn100")){
+                    score += 100;
+                    points.innerText = score;
+                } else if(hole.classList.contains("earn200")){
+                    score += 200;
+                    points.innerText = score;
+                }
           console.log(score);
-            points.innerText = score;
+            
             console.log("GANHOUUUUUUUUUUUUU")
            
            } else{
@@ -107,8 +108,10 @@ holesArray.forEach((hole) => {
 })
 
 
+
+console.log(score);
 btnLost.addEventListener("click", () => {
-    heartPoint = 3;
+    heartPoint = 5;
     heartScore.innerText = heartPoint;
    
     bright.style.display = 'none';

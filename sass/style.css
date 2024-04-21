@@ -187,6 +187,11 @@ body {
     width: 50px;
   }
 }
+@media screen and (max-width: 600px) {
+  .character p {
+    padding-bottom: 0.3rem !important;
+  }
+}
 
 .grid-hole {
   display: grid;

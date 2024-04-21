@@ -31,7 +31,8 @@ body{
     @include centering;
     width:25%;
     height:10rem;
-    background-color: $secondary-color;
+    background-color: #ccc;
+    border-radius: 10px;
     z-index: 1000;
 
     @media screen {
@@ -58,7 +59,7 @@ body{
     text-align: center;
     font-family: $main-font;
     font-weight: 400;
-    color:rgb(44, 43, 43);
+    color:$primary-color !important;
     font-size: 2rem;
 }
 .start h4{
@@ -67,10 +68,13 @@ body{
     margin-top: -9%;
 }
 .start button, .end button{
-    background-color: $primary-color;
-    color:$secondary-color;
-    padding:.6rem;
+    background-color:#227922;
+    color: #eeeaea;
+    padding:.7rem;
     border: none;
+    font-family: sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
     margin: 3% auto;
     display:block;
     cursor: pointer;
@@ -183,6 +187,7 @@ body{
     @include centering;
     margin-top: 3%;
     margin-left: 2%;
+    top:40%;
     @media screen {
         @media screen and (max-width:1200px) {
             & {
@@ -324,7 +329,8 @@ h2, button{
     @include centering;
     width:25%;
     height:10rem;
-    background-color: $secondary-color;
+    background-color: #ccc;
+    border-radius: 10px;
     z-index: 1000; 
     display: none;
     

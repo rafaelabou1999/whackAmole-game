@@ -29,7 +29,8 @@ body {
   transform: translate(-50%, -50%);
   width: 25%;
   height: 10rem;
-  background-color: whitesmoke;
+  background-color: #ccc;
+  border-radius: 10px;
   z-index: 1000;
 }
 @media screen and (max-width: 1680px) {
@@ -60,7 +61,7 @@ body {
   text-align: center;
   font-family: "Jersey 25", sans-serif;
   font-weight: 400;
-  color: rgb(44, 43, 43);
+  color: rgba(0, 0, 0, 0.918) !important;
   font-size: 2rem;
 }
 
@@ -71,10 +72,13 @@ body {
 }
 
 .start button, .end button {
-  background-color: rgba(0, 0, 0, 0.918);
-  color: whitesmoke;
-  padding: 0.6rem;
+  background-color: #227922;
+  color: #eeeaea;
+  padding: 0.7rem;
   border: none;
+  font-family: sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
   margin: 3% auto;
   display: block;
   cursor: pointer;
@@ -199,11 +203,12 @@ body {
   grid-template-rows: repeat(1, 28em);
   grid-gap: 2%;
   position: absolute;
-  top: 40%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   margin-top: 3%;
   margin-left: 2%;
+  top: 40%;
 }
 @media screen and (max-width: 1200px) {
   .grid-hole {
@@ -334,7 +339,8 @@ h2, button {
   transform: translate(-50%, -50%);
   width: 25%;
   height: 10rem;
-  background-color: whitesmoke;
+  background-color: #ccc;
+  border-radius: 10px;
   z-index: 1000;
   display: none;
 }

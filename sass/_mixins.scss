@@ -1,5 +1,6 @@
 
 $primary-color: rgba(0, 0, 0, 0.918);
+$secondary-color: whitesmoke;
 @mixin centering{
     position: absolute;
     top:50%;
@@ -12,4 +13,11 @@ $primary-color: rgba(0, 0, 0, 0.918);
     flex-direction: $direction;
     justify-content: center;
     align-items: center;
+}
+
+@mixin grid($columns, $rows, $gap){
+    display: grid;
+    grid-template-columns: repeat(2, $columns);
+    grid-template-rows: repeat(3, $rows);
+    grid-gap: $gap;
 }

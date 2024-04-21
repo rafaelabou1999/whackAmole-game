@@ -31,7 +31,7 @@ body{
     @include centering;
     width:25%;
     height:10rem;
-    background-color: whitesmoke;
+    background-color: $secondary-color;
     z-index: 1000;
 }
 
@@ -45,7 +45,7 @@ body{
 
 .start button, .lost button{
     background-color: $primary-color;
-    color:whitesmoke;
+    color:$secondary-color;
     padding:.6rem;
     border: none;
     margin: 3% auto;
@@ -124,10 +124,7 @@ body{
 }
 
 .grid-hole{
-    display: grid;
-    grid-template-columns: repeat(2,15em);
-    grid-template-rows: repeat(3,11em);
-    grid-gap:2%;
+    @include grid(15em, 11em, 2%);
     @include centering;
     @media screen {
         @media screen and (max-width:1200px) {
@@ -175,7 +172,7 @@ h2, button{
 .points{
     font-size: 1.6rem;
     padding:.9rem;
-    color:whitesmoke;
+    color:$secondary-color;
 }
 
 .hole p{
@@ -194,7 +191,7 @@ h2, button{
     @include centering;
     width:25%;
     height:10rem;
-    background-color: whitesmoke;
+    background-color: $secondary-color;
     z-index: 1000; 
     display: none;
 }

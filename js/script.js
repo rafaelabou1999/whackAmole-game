@@ -36,9 +36,14 @@ let imgToScore;
 function clickMole(){
     random = Math.floor(Math.random() * holesArray.length);
     imgsArray.forEach((img) => {
-        if(imgsArray.indexOf(img) === random){
+        if(imgsArray.indexOf(img) === random){       
             img.style.display = 'block';
             imgToScore = img;
+           
+            function hideImage() {
+                img.style.display = "none"; // Set the display property to "none"
+              }   
+            setTimeout(hideImage, 600);
         } else{
             img.style.display = 'none';
         }

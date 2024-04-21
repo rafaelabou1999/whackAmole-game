@@ -33,6 +33,25 @@ body{
     height:10rem;
     background-color: $secondary-color;
     z-index: 1000;
+
+    @media screen {
+        @media  screen and (max-width: 1680px) {
+            height:11.7rem;
+        }
+
+        @media  screen and (max-width: 1300px) {
+            height:9.5rem;
+            width:50%;
+        }
+        @media  screen and (max-width: 1000px) {
+            height:11.5rem;
+            width:50%;
+        }
+        @media  screen and (max-width: 500px) {
+            height:12.5rem;
+            width:80%;
+        }
+    }
 }
 
 .start h3, .end h3, .start h4{
@@ -303,6 +322,7 @@ h2, button{
     background-color: $secondary-color;
     z-index: 1000; 
     display: none;
+    
 }
 
 .earn{
@@ -334,4 +354,27 @@ footer{
     bottom:0;
     left:0;
     right:0;
+}
+
+.start,.end{
+    
+    @media screen {
+        @media  screen and (max-width: 1680px) {
+            height:11.7rem;
+        }
+
+        @media  screen and (max-width: 1300px) {
+            height:10.5rem;
+            width:50%;
+        }
+        @media  screen and (max-width: 1000px) {
+            height:12.5rem;
+            width:50%;
+        }
+        @media  screen and (max-width: 500px) {
+            height:11rem;
+            width:80%;    
+            padding: 5%;
+        }
+    }
 }

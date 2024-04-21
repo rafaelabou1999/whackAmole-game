@@ -32,6 +32,29 @@ body {
   background-color: whitesmoke;
   z-index: 1000;
 }
+@media screen and (max-width: 1680px) {
+  .start {
+    height: 11.7rem;
+  }
+}
+@media screen and (max-width: 1300px) {
+  .start {
+    height: 9.5rem;
+    width: 50%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .start {
+    height: 11.5rem;
+    width: 50%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .start {
+    height: 12.5rem;
+    width: 80%;
+  }
+}
 
 .start h3, .end h3, .start h4 {
   text-align: center;
@@ -340,4 +363,29 @@ footer {
   bottom: 0;
   left: 0;
   right: 0;
+}
+
+@media screen and (max-width: 1680px) {
+  .start, .end {
+    height: 11.7rem;
+  }
+}
+@media screen and (max-width: 1300px) {
+  .start, .end {
+    height: 10.5rem;
+    width: 50%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .start, .end {
+    height: 12.5rem;
+    width: 50%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .start, .end {
+    height: 11rem;
+    width: 80%;
+    padding: 5%;
+  }
 }/*# sourceMappingURL=style.css.map */

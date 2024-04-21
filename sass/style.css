@@ -33,12 +33,18 @@ body {
   z-index: 1000;
 }
 
-.start h3, .lost h3 {
+.start h3, .lost h3, .start h4 {
   text-align: center;
   font-family: "Jersey 25", sans-serif;
   font-weight: 400;
   color: rgb(44, 43, 43);
   font-size: 2rem;
+}
+
+.start h4 {
+  color: rgb(207, 39, 39);
+  font-size: 1.6rem;
+  margin-top: -9%;
 }
 
 .start button, .lost button {
@@ -51,6 +57,10 @@ body {
   cursor: pointer;
   opacity: 1;
   transition: all 0.3s ease-in-out;
+}
+
+.start button {
+  margin-top: -3%;
 }
 
 .start button:hover {
@@ -106,7 +116,7 @@ body {
      object-fit: cover;
   width: 80%;
   display: block;
-  margin: 0 auto;
+  margin: -28% auto;
 }
 @media screen and (max-width: 1440px) and (min-width: 1201px) {
   .character img {
@@ -128,13 +138,15 @@ body {
 
 .grid-hole {
   display: grid;
-  grid-template-columns: repeat(2, 15em);
-  grid-template-rows: repeat(3, 11em);
+  grid-template-columns: repeat(4, 15em);
+  grid-template-rows: repeat(1, 28em);
   grid-gap: 2%;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  margin-top: 3%;
+  margin-left: 2%;
 }
 @media screen and (max-width: 1200px) {
   .grid-hole {
@@ -147,9 +159,13 @@ body {
   }
 }
 
+.hole:nth-of-type(even) {
+  margin-top: 25%;
+}
+
 .hole {
   width: 11.5em;
-  height: 9.5em;
+  height: 4.5em;
   background-color: rgba(0, 0, 0, 0.918);
   border-radius: 60%;
 }
@@ -181,10 +197,12 @@ h2, button {
   background-color: rgb(43, 255, 0);
   border: 1px solid rgba(0, 0, 0, 0.918);
   width: 21%;
-  padding: 0.3rem;
+  padding: 0.4rem;
   font-weight: 800;
   padding-top: 0.1rem;
   padding-left: 0.5rem;
+  margin-top: 16%;
+  margin-left: -18%;
   text-align: center;
   height: 1rem;
 }
@@ -199,4 +217,9 @@ h2, button {
   background-color: whitesmoke;
   z-index: 1000;
   display: none;
+}
+
+.earn {
+  display: none;
+  padding: 0.5rem;
 }/*# sourceMappingURL=style.css.map */

@@ -17,7 +17,7 @@ $secondary-color: whitesmoke;
 
 @mixin grid($columns, $rows, $gap){
     display: grid;
-    grid-template-columns: repeat(2, $columns);
-    grid-template-rows: repeat(3, $rows);
+    grid-template-columns: repeat(4, $columns);
+    grid-template-rows: repeat(1, $rows);
     grid-gap: $gap;
 }

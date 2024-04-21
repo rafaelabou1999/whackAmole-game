@@ -21,11 +21,12 @@ btnBox.addEventListener("click", () => initGame())
 
 let holes = document.querySelectorAll('.hole');
 let imgs = document.querySelectorAll('.character');
-let points = document.querySelector('p');
+let tries = document.querySelector('.tries');
 let random;
 
 let hearts = document.querySelectorAll('.hearts img');
 let heartScore = document.querySelector(".heartScore");
+
 
 
 let holesArray = Array.from(holes);
@@ -33,17 +34,25 @@ let imgsArray = Array.from(imgs);
 
 let imgToScore;
 
+let earn100 = document.querySelectorAll(".earn100");
+let earn200 = document.querySelectorAll(".earn200");
+let earn = document.querySelectorAll(".earn");
+
+
 function clickMole(){
     random = Math.floor(Math.random() * holesArray.length);
     imgsArray.forEach((img) => {
         if(imgsArray.indexOf(img) === random){       
             img.style.display = 'block';
             imgToScore = img;
-           
+            let triesNumber = parseFloat(tries.innerHTML); // Extract the current value
+            tries.innerHTML = triesNumber + 1; // 
+            tries.style.fontSize = '1.2rem';
+            
             function hideImage() {
                 img.style.display = "none"; // Set the display property to "none"
               }   
-            setTimeout(hideImage, 600);
+            setTimeout(hideImage, 900);
         } else{
             img.style.display = 'none';
         }
@@ -82,12 +91,15 @@ holesArray.forEach((hole) => {
         clickMole();
         if(hole){
            if(holesArray.indexOf(hole) === random){
+            
+                earn.forEach((each) => {
+                    let earnArray = Array.from(earn)
+                    earnArray[random].style.display = 'block';
+                })
                 if(hole.classList.contains("earn100")){
                     score += 100;
-                    points.innerText = score;
                 } else if(hole.classList.contains("earn200")){
                     score += 200;
-                    points.innerText = score;
                 }
           console.log(score);
             
@@ -105,6 +117,7 @@ holesArray.forEach((hole) => {
             if(heartPoint === 0){
                 bright.style.display = 'block';
                 lostBox.style.display = 'block';
+                tries.innerHTML = 0;
             }
            }
         } 
@@ -127,5 +140,3 @@ btnLost.addEventListener("click", () => {
     })
 })
 
-let earn100 = document.querySelectorAll(".earn100");
-let earn200 = document.querySelectorAll(".earn200");

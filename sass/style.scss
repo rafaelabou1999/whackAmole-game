@@ -84,6 +84,10 @@ body{
     margin-bottom: 1% !important;
 }
 
+.score p{
+    font-size: 1.4rem;
+}
+
 .hearts{
     @include flex(row);
     gap:3%;
@@ -159,12 +163,26 @@ body{
     @media screen {
         @media screen and (max-width:1200px) {
             & {
-                position: absolute;
-                top:50%;
-                left:50%;
+                top:47% !important;
+                left:47%;
                 transform: translate(-45%,-30%);
-                grid-template-columns: repeat(2,12em);
-                grid-template-rows: repeat(4,10em);
+                grid-template-columns: repeat(2,18em);
+                grid-template-rows: repeat(4,12em);
+            }
+        }
+
+        @media screen and (max-width:700px) {
+            & {
+                grid-template-columns: repeat(2,14em) ;
+                grid-template-rows: repeat(4,12em);
+            }
+        }
+
+        @media screen and (max-width:500px) {
+            & {
+                top:35% !important;
+                grid-template-columns: repeat(1,14em) ;
+                grid-template-rows: repeat(4,7em);
             }
         }
     }
@@ -172,6 +190,11 @@ body{
 
 .hole:nth-of-type(even){
     margin-top:25%;
+    @media screen and (max-width:500px) {
+        & {
+           margin-top: 0%;
+        }
+    }
 }
 
 .hole{
@@ -298,4 +321,17 @@ h2, button{
     font-weight: 300;
     font-size: 1.1rem;
     margin-top: -5% !important;
+}
+
+footer{
+    font-family: sans-serif;
+    background-color: $primary-color;
+    color: $secondary-color;
+    font-size: 1.1rem;
+    padding:.7rem;
+    text-align: center;
+    position: absolute;
+    bottom:0;
+    left:0;
+    right:0;
 }

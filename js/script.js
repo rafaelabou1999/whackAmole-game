@@ -86,7 +86,10 @@ holesArray.forEach((hole) => {
         
                 scoreHtml.innerHTML = score;
            } else{
-           
+            earn.forEach((each) => {
+                let earnArray = Array.from(earn)
+                earnArray[random].style.display = 'none';
+            })
             if (heartPoint > 0) {
                 heartPoint -= 1;
                 heartScore.innerText = heartPoint;

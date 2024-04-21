@@ -33,7 +33,7 @@ body {
   z-index: 1000;
 }
 
-.start h3, .lost h3, .start h4 {
+.start h3, .end h3, .start h4 {
   text-align: center;
   font-family: "Jersey 25", sans-serif;
   font-weight: 400;
@@ -47,7 +47,7 @@ body {
   margin-top: -9%;
 }
 
-.start button, .lost button {
+.start button, .end button {
   background-color: rgba(0, 0, 0, 0.918);
   color: whitesmoke;
   padding: 0.6rem;
@@ -108,15 +108,25 @@ body {
 }
 
 .character {
+  position: relative;
   display: none;
+  z-index: 100 !important;
+  margin-bottom: 20% !important;
+  width: 80%;
 }
 
 .character img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 11% !important;
+  left: 60%;
+  z-index: 100 !important;
   -o-object-fit: cover;
      object-fit: cover;
-  width: 80%;
+  width: 100%;
   display: block;
-  margin: -28% auto;
 }
 @media screen and (max-width: 1440px) and (min-width: 1201px) {
   .character img {
@@ -125,6 +135,21 @@ body {
   }
 }
 
+.character p {
+  z-index: 800;
+  padding-bottom: 0.7rem !important;
+  width: 3rem !important;
+  text-align: center;
+  background-color: rgb(124, 81, 16) !important;
+  color: rgba(0, 0, 0, 0.918);
+  border-radius: 20%;
+  border: 1px solid black;
+  font-family: sans-serif;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 @media screen and (max-width: 1440px) and (min-width: 1201px) {
   .character p {
     width: 51px;
@@ -207,7 +232,52 @@ h2, button {
   height: 1rem;
 }
 
-.lost {
+.hole {
+  width: 11.5em;
+  height: 4.5em;
+  background-color: rgba(0, 0, 0, 0.918);
+  border-radius: 60%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  position: relative;
+  z-index: 0 !important;
+}
+.hole:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.918);
+  border-radius: 60%;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+  animation: pulse-dot 1.25s cubic-bezier(0.455, 0.03, 0.515, 0.955) -0.4s infinite;
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.33);
+  }
+  80%, 100% {
+    opacity: 0;
+  }
+}
+@keyframes pulse-dot {
+  0% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}
+.end {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -222,4 +292,18 @@ h2, button {
 .earn {
   display: none;
   padding: 0.5rem;
+}
+
+.end h3 {
+  margin-top: 4%;
+}
+
+.end h4 {
+  text-align: center;
+  font-family: monospace;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.918);
+  font-weight: 300;
+  font-size: 1.1rem;
+  margin-top: -5% !important;
 }/*# sourceMappingURL=style.css.map */

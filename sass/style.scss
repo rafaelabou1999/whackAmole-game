@@ -1,0 +1,201 @@
+
+@import 'mixins';
+
+body{
+    background-image: url(/images/grass.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    @media screen {
+        @media screen and (max-width:1440px) {
+           & {
+                background-repeat: repeat !important;
+            }
+        }
+    }
+}
+
+.bright{
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    height:0;
+    height:100vh;
+    width:100%;
+    background-color: $primary-color;
+    z-index: 999;
+    display: block;
+}
+
+.start{
+    @include centering;
+    width:25%;
+    height:10rem;
+    background-color: whitesmoke;
+    z-index: 1000;
+}
+
+.start h3, .lost h3{
+    text-align: center;
+    font-family: "Jersey 25", sans-serif;
+    font-weight: 400;
+    color:rgb(44, 43, 43);
+    font-size: 2rem;
+}
+
+.start button, .lost button{
+    background-color: $primary-color;
+    color:whitesmoke;
+    padding:.6rem;
+    border: none;
+    margin: 3% auto;
+    display:block;
+    cursor: pointer;
+    opacity: 1;
+    transition: all .3s ease-in-out;
+}
+
+.start button:hover{
+    opacity: .9;
+}
+
+.info{
+   @include flex(column);
+   margin: auto;
+}
+
+.score{
+    @include flex(row);
+    width: 13em;
+    height:2em;
+    background-color: $primary-color;
+    padding-left: .4rem;
+    font-size: .9rem;
+    font-family: monospace;
+    margin: 2.5% auto;
+    color:rgb(157, 175, 56);
+    margin-bottom: 1% !important;
+}
+
+.hearts{
+    @include flex(row);
+    gap:3%;
+    margin: auto;
+}
+
+.hearts img{
+    width: 2rem;
+    height: 2rem; 
+    object-fit: cover;
+}
+
+.character{
+    display: none;
+}
+.character img{
+    object-fit: cover;
+    width:80%;
+    display: block;
+    margin: 0 auto;
+    @media screen {
+        @media screen and (max-width:1440px) and (min-width:1201px) {
+            & {
+                display: block;
+                margin: 7% auto;
+            }
+        }
+    }
+}
+
+.character p{
+    @media screen {
+        @media screen and (max-width:1440px) and (min-width:1201px) {
+            & {
+                width:51px;
+            }
+        }
+
+        @media screen and (max-width:1200px) {
+            & {
+                width:50px;
+            }
+        }
+    }
+}
+
+.grid-hole{
+    display: grid;
+    grid-template-columns: repeat(2,15em);
+    grid-template-rows: repeat(3,11em);
+    grid-gap:2%;
+    @include centering;
+    @media screen {
+        @media screen and (max-width:1200px) {
+            & {
+                position: absolute;
+                top:50%;
+                left:50%;
+                transform: translate(-45%,-30%);
+                grid-template-columns: repeat(2,12em);
+                grid-template-rows: repeat(4,10em);
+            }
+        }
+    }
+}
+.hole{
+    width: 11.5em;
+    height: 9.5em;
+    background-color: $primary-color;
+    border-radius: 60%;
+    @media screen {
+        @media screen and (max-width:1200px) and (max-width:1440px)  {
+            &{
+                width: 10em;
+                height:10em;
+            }
+        }
+
+        @media screen and (max-width:1200px) {
+             & {
+                width: max(18vw, 150px);
+                height: 9.5em;
+            }
+        }
+    }
+}
+
+
+
+h2, button{
+    font-family: monospace;
+    text-align: center;
+}
+
+
+.points{
+    font-size: 1.6rem;
+    padding:.9rem;
+    color:whitesmoke;
+}
+
+.hole p{
+    background-color: rgb(43, 255, 0);
+    border: 1px solid  $primary-color;
+    width:21%;
+    padding: .3rem;
+    font-weight: 800;
+    padding-top: .1rem;
+    padding-left: .5rem;
+    text-align: center;
+    height:1rem;
+}
+
+.lost{
+    @include centering;
+    width:25%;
+    height:10rem;
+    background-color: whitesmoke;
+    z-index: 1000; 
+    display: none;
+}
+

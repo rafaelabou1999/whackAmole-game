@@ -59,7 +59,6 @@ function clickMole(){
 
 function removeLife(){
     heartArray.forEach((heart) => {
-      console.log("heart aq")
     console.log(--heartPoint);
     })
 }

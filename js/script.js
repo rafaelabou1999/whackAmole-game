@@ -69,19 +69,6 @@ function setLives() {
 	}
 }
 
-function restartGame(){
-	totalOfLives = 5;
-	lifeAmount.innerText = totalOfLives;
-	finalScore = 0;
-	bright.style.display = 'none';
-	endBox.style.display = 'none';
-	scoreHtml.innerHTML = 0;
-	hearts.forEach((heart) => {
-		heart.src = "images/heartFull.png";
-	}
-	)
-}
-
 function isCorrectHole(hole) {
 	let earnArray = Array.from(toEarn);
 
@@ -102,6 +89,20 @@ function isCorrectHole(hole) {
 	}
 
 }
+
+function restartGame(){
+	totalOfLives = 5;
+	lifeAmount.innerText = totalOfLives;
+	finalScore = 0;
+	bright.style.display = 'none';
+	endBox.style.display = 'none';
+	scoreHtml.innerHTML = 0;
+	hearts.forEach((heart) => {
+		heart.src = "images/heartFull.png";
+	}
+	)
+}
+
 startBox.addEventListener("click", () => initGame())
 
 holeArray.forEach((hole) => {

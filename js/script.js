@@ -31,11 +31,6 @@ function hideImage() {
 	this.style.display = "none";
 }
 
-function removeLife() {
-	Array.prototype.map(hearts, heart => --totalOfLives);
-}
-
-
 function clickMole() {
 	random = Math.floor(Math.random() * holeArray.length);
 	characterArray.forEach((img) => {

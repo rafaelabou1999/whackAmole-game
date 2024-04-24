@@ -1,6 +1,7 @@
 let startBox = document.querySelector('.start');
 let bright = document.querySelector(".bright");
 
+
 let holes = document.querySelectorAll('.hole');
 let character = document.querySelectorAll('.character');
 let tries = document.querySelector('.tries');
@@ -52,55 +53,68 @@ function clickMole() {
 
 }
 
+function setLives() {
+	if (totalOfLives > 0) {
+		totalOfLives -= 1;
+		lifeAmount.innerText = totalOfLives;
+		hearts[totalOfLives].src = "images/emptyheart.png";
 
+	}
+
+	if (totalOfLives === 0) {
+		bright.style.display = 'block';
+		endBox.style.display = 'block';
+		tries.innerHTML = 0;
+		score = 0;
+	}
+}
+
+function restartGame(){
+	totalOfLives = 5;
+	lifeAmount.innerText = totalOfLives;
+	finalScore = 0;
+	bright.style.display = 'none';
+	endBox.style.display = 'none';
+
+	hearts.forEach((heart) => {
+		heart.src = "images/heartFull.png";
+	}
+	)
+}
+
+function isCorrectHole(hole) {
+	let earnArray = Array.from(toEarn);
+
+	if (holeArray.indexOf(hole) === random) {
+		toEarn.forEach((each) => {
+			earnArray[random].style.display = 'block';
+		})
+		if (hole.classList.contains("e100")) {
+			finalScore += 100;
+		} else if (hole.classList.contains("e200")) {
+			finalScore += 200;
+		}
+
+		scoreHtml.innerHTML = finalScore;
+	} else {
+		earnArray[random].style.display = 'none';
+		setLives();
+	}
+
+}
 startBox.addEventListener("click", () => initGame())
 
 holeArray.forEach((hole) => {
 	hole.addEventListener("click", (e) => {
 		clickMole();
-		let earnArray = Array.from(toEarn);
-		if (hole) {
-			if (holeArray.indexOf(hole) === random) {
-				toEarn.forEach((each) => {
-					earnArray[random].style.display = 'block';
-				})
-				if (hole.classList.contains("e100")) {
-					finalScore += 100;
-				} else if (hole.classList.contains("e200")) {
-					finalScore += 200;
-				}
-
-				scoreHtml.innerHTML = finalScore;
-			} else {
-				earnArray[random].style.display = 'none';
-
-				if (totalOfLives > 0) {
-					totalOfLives -= 1;
-					lifeAmount.innerText = totalOfLives;
-					hearts[totalOfLives].src = "images/emptyheart.png";
-				}
-				if (totalOfLives === 0) {
-					bright.style.display = 'block';
-					endBox.style.display = 'block';
-					tries.innerHTML = 0;
-					score = 0;
-				}
-			}
-		}
+		isCorrectHole(hole);
 	}
 	)
 }
 )
 
 btnEnd.addEventListener("click", () => {
-	totalOfLives = 5;
-	lifeAmount.innerText = totalOfLives;
-	finalScore = 0;
-	bright.style.display = 'none';
-	endBox.style.display = 'none';
-	hearts.forEach((heart) => {
-		heart.src = "images/heartFull.png";
-	}
-	)
+	restartGame();
 }
 )
+

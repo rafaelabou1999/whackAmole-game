@@ -61,42 +61,43 @@ function clickMole(){
 startBox.addEventListener("click", () => initGame())
 
 holeArray.forEach((hole) => {
-    hole.addEventListener("click", (e) =>{
-        clickMole();
-        if(hole){
-            const earnArray = Array.from(toEarn);
-            const correctHole = holeArray.indexOf(hole) === random ? earnArray[random].style.display = 'block' : earnArray[random].style.display = 'none';
-            
-				if (hole.classList.contains("e100")) {
-					finalScore += 100;
-					console.log(finalScore)
-			  } else if (hole.classList.contains("e200")) {
-					finalScore += 200;
-					console.log(finalScore)
-			  } else{
-				finalScore += 0;
+	hole.addEventListener("click", (e) =>{
+		 clickMole();
+		 let earnArray = Array.from(toEarn);
+		 if(hole){
+			 if(holeArray.indexOf(hole) === random){
+
+					toEarn.forEach((each) => {
+						 earnArray[random].style.display = 'block';
+					})
+					if(hole.classList.contains("e100")){
+						finalScore += 100;
+					} else if(hole.classList.contains("e200")){
+						finalScore += 200;
+					}
+
+					scoreHtml.innerHTML = finalScore;
+			 } else{
+			  earnArray[random].style.display = 'none';
+					
+			  if (totalOfLives > 0) {
+				   totalOfLives-= 1;
+					heartScore.innerText =totalOfLives;
+					hearts[heartPoint].src = "images/emptyheart.png";
+
 			  }
-            
-           scoreHtml.innerHTML = finalScore;         
-          
 
-            if (totalOfLives > 0) {
-					 totalOfLives -= 1;
-                lifeAmount.innerText = totalOfLives;
-                hearts[totalOfLives].src = "images/emptyheart.png";    
-            }
+			  if(totalOfLives === 0){
+					bright.style.display = 'block';
+					endBox.style.display = 'block';
+					tries.innerHTML = 0;
+					score = 0;
+			  }
+			 }
+		 } 
 
-            if(totalOfLives === 0){
-                bright.style.display = 'block';
-                endBox.style.display = 'block';
-                tries.innerHTML = 0;
-                finalScore = 0;
-            }
-          }
-        } 
-      )
-   }
-)
+	} )
+})
 
 btnEnd.addEventListener("click", () => {
 	 totalOfLives = 5;

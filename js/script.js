@@ -11,8 +11,6 @@ let hearts = document.querySelectorAll('.hearts img');
 let lifeAmount = document.querySelector(".lifeAmount");
 let totalOfLives = 5;
 
-let imgToScore;
-
 let toEarn = document.querySelectorAll(".earn");
 let scoreHtml = document.querySelector(".end span");
 let finalScore = 0;
@@ -20,8 +18,9 @@ let finalScore = 0;
 let endBox = document.querySelector(".end");
 let btnEnd = document.querySelector(".end button");
 
-let holeArray = Array.from(holes)
-let characterArray = Array.from(character)
+let holeArray = Array.from(holes);
+let characterArray = Array.from(character);
+
 function initGame() {
 	bright.style.display = 'none';
 	startBox.style.display = 'none';
@@ -36,7 +35,6 @@ function clickMole() {
 	characterArray.forEach((img) => {
 		if (characterArray.indexOf(img) === random) {
 			img.style.display = 'block';
-			imgToScore = img;
 			let triesNumber = parseFloat(tries.innerHTML);
 			tries.innerHTML = triesNumber + 1;
 			tries.style.fontSize = '1.2rem';
@@ -73,7 +71,7 @@ function isCorrectHole(hole) {
 	let earnArray = Array.from(toEarn);
 
 	if (holeArray.indexOf(hole) === random) {
-		toEarn.forEach((each) => {
+		toEarn.forEach(() => {
 			earnArray[random].style.display = 'block';
 		})
 		if (hole.classList.contains("e100")) {
@@ -106,7 +104,7 @@ function restartGame(){
 startBox.addEventListener("click", () => initGame())
 
 holeArray.forEach((hole) => {
-	hole.addEventListener("click", (e) => {
+	hole.addEventListener("click", () => {
 		clickMole();
 		isCorrectHole(hole);
 	}

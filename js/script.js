@@ -75,7 +75,7 @@ function restartGame(){
 	finalScore = 0;
 	bright.style.display = 'none';
 	endBox.style.display = 'none';
-	scoreHtml.innerHTML = finalScore;
+	scoreHtml.innerHTML = 0;
 	hearts.forEach((heart) => {
 		heart.src = "images/heartFull.png";
 	}

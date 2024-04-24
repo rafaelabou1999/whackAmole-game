@@ -1,7 +1,6 @@
 let startBox = document.querySelector('.start');
 let bright = document.querySelector(".bright");
 
-
 let holes = document.querySelectorAll('.hole');
 let character = document.querySelectorAll('.character');
 let tries = document.querySelector('.tries');
@@ -62,7 +61,6 @@ holeArray.forEach((hole) => {
 		let earnArray = Array.from(toEarn);
 		if (hole) {
 			if (holeArray.indexOf(hole) === random) {
-
 				toEarn.forEach((each) => {
 					earnArray[random].style.display = 'block';
 				})
@@ -80,9 +78,7 @@ holeArray.forEach((hole) => {
 					totalOfLives -= 1;
 					lifeAmount.innerText = totalOfLives;
 					hearts[totalOfLives].src = "images/emptyheart.png";
-
 				}
-
 				if (totalOfLives === 0) {
 					bright.style.display = 'block';
 					endBox.style.display = 'block';
@@ -102,11 +98,9 @@ btnEnd.addEventListener("click", () => {
 	finalScore = 0;
 	bright.style.display = 'none';
 	endBox.style.display = 'none';
-
 	hearts.forEach((heart) => {
 		heart.src = "images/heartFull.png";
 	}
 	)
 }
 )
-

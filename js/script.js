@@ -82,8 +82,8 @@ holeArray.forEach((hole) => {
 					
 			  if (totalOfLives > 0) {
 				   totalOfLives-= 1;
-					heartScore.innerText =totalOfLives;
-					hearts[heartPoint].src = "images/emptyheart.png";
+				   lifeAmount.innerText =totalOfLives;
+				   hearts[totalOfLives].src = "images/emptyheart.png";
 
 			  }
 

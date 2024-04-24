@@ -43,7 +43,7 @@ function clickMole(){
 			  img.style.display = 'block';
 			  imgToScore = img;
 			  let triesNumber = parseFloat(tries.innerHTML);
-			  tries.innerHTML = triesNumber + 1; // 
+			  tries.innerHTML = triesNumber + 1; 
 			  tries.style.fontSize = '1.2rem';
 			  
 			  function hideImage() {
@@ -103,7 +103,6 @@ btnEnd.addEventListener("click", () => {
 	 totalOfLives = 5;
     lifeAmount.innerText = totalOfLives;
     finalScore = 0;
-	 console.log('finaaal' + finalScore)
     bright.style.display = 'none';
     endBox.style.display = 'none';
   

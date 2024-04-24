@@ -20,10 +20,8 @@ let finalScore = 0;
 let endBox = document.querySelector(".end");
 let btnEnd = document.querySelector(".end button");
 
-let holeArray = Array.from(holes);
-let characterArray = Array.from(character);
-
-
+let holeArray = Array.from(holes)
+let characterArray = Array.from(character)
 function initGame(){
     bright.style.display = 'none';
     startBox.style.display = 'none';
@@ -66,23 +64,21 @@ holeArray.forEach((hole) => {
     hole.addEventListener("click", (e) =>{
         clickMole();
         if(hole){
-           const earnArray = Array.from(toEarn);
-           const correctHole = holeArray.indexOf(hole) === random;
+            const earnArray = Array.from(toEarn);
+            const correctHole = holeArray.indexOf(hole) === random ? earnArray[random].style.display = 'block' : earnArray[random].style.display = 'none';
             
-           if(correctHole){   
-					if (correctHole) {
-						earnArray[random].style.display = 'block';
-						if (hole.classList.contains("e100")) {
-							finalScore += 100;
-						} else if (hole.classList.contains("e200")) {
-							finalScore += 200;
-						} else{
-							finalScore += 0;
-						}
-
-            scoreHtml.innerHTML = finalScore;         
-				console.log("correct hole " + finalScore)
-           } 
+				if (hole.classList.contains("e100")) {
+					finalScore += 100;
+					console.log(finalScore)
+			  } else if (hole.classList.contains("e200")) {
+					finalScore += 200;
+					console.log(finalScore)
+			  } else{
+				finalScore += 0;
+			  }
+            
+           scoreHtml.innerHTML = finalScore;         
+          
 
             if (totalOfLives > 0) {
 					 totalOfLives -= 1;
@@ -98,7 +94,7 @@ holeArray.forEach((hole) => {
             }
           }
         } 
-})
+      )
    }
 )
 
@@ -106,7 +102,7 @@ btnEnd.addEventListener("click", () => {
 	 totalOfLives = 5;
     lifeAmount.innerText = totalOfLives;
     finalScore = 0;
-	 console.log('Final' + finalScore)
+	 console.log('finaaal' + finalScore)
     bright.style.display = 'none';
     endBox.style.display = 'none';
   
